@@ -1,0 +1,43 @@
+body {
+    background-image: url(../images/img.png);
+    direction: rtl;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#title {
+    font-size: 400%;
+    text-align: center;
+}
+
+.btn {
+    font-size: 200%;
+    margin-right: 40%;
+}
+
+#sub {
+    margin-top: 10%;
+}
+#name{
+    
+    margin-top: 6%
+}
+#players_name{
+    display: none;
+}
+.link1{
+    display: none;
+}
+.show{
+    display: inline;
+}
+.dontShow{
+    display: none;
+}
+.new_div{
+    display: inline;
+    text-align: center;
+    border: solid yellow 3px;    
+    font-size: 200%;
+
+}

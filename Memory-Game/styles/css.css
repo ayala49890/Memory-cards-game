@@ -1,0 +1,58 @@
+body {
+  background-image: url(../images/img.png);
+  direction: rtl;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#inst {
+  font-size: 40px;
+}
+
+#instTitle {
+  font-size: 300%;
+  text-align: center;
+}
+
+#toPlay {
+  margin: 43.3333%;
+}
+
+#toThePlay {
+  direction: ltr;
+}
+
+#title {
+  font-family: serif;
+  text-align: center;
+  font-size: 150px;
+  color: black;
+}
+
+#level {
+  text-align: center;
+  color: #ffcf00;
+  background-color: black;
+  border-radius: 40%;
+}
+
+#l1,
+#l2,
+#l3 {
+  width: 20%;
+  height: 150px;
+  display: block;
+
+}
+
+.play1 {
+  align-items: center;
+}
+
+#l1,
+#l2,
+#l3 {
+  margin-left: 40%;
+}
+
+/*----------------------------------------*/
