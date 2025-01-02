@@ -16,13 +16,6 @@ body{
     width: 18%;
 }
 
-/*.squre{
-border: solid black 3px;   
-
-height: 200px; 
-flex-direction: row;
-width: 18%;
-}*/
 #board{
     display: flex;
     justify-content: center;
@@ -38,12 +31,7 @@ width: 18%;
 button{
     width: 18%;
 }
-/*#newGame{
-    background-color: crimson;
-    border: 4px black solid;
-    height: 200px;
-    border-radius: 35%;
-}*/
+
 #chetz{
     width: 200%;
     
