@@ -1,14 +1,12 @@
 let num_points;
 let Name = 'computer'
 function point() {
-    //שליפת נתונים קודמים
     let p = localStorage.getItem(Name);
     let pi = JSON.parse(p);
     if (!pi) {
         localStorage.setItem(Name, "0");
         pi = "0"
     }
-    //הצגת נתונים
     num_points = parseInt(pi);
     let point = " מספר הנקודות שלך הוא"
     point += num_points;
@@ -46,22 +44,17 @@ const all_cards = [
     '29.png'
 ];
 let game_cards = [];
-///////////////////////////////////////////פונקציות///////////////////////////////////////////////////
-// פונקצית ערבוב מערך
+
 function shuffle_arr() {
     game_cards.sort(function (a, b) { return Math.round(Math.random()) - Math.round(Math.random()) });
 }
-//פונקציית החבאת כרטיס
 let hide;
 function hideCard() {
     shuffle_arr();
     hide = game_cards[0];
     game_cards[0] = 'qestion.jpg';
-
-    // הצגת התמונות למסך
     document.querySelector('#question').innerHTML = "חפש את התמונה המסתתרת";
     showImg();
-    // הדלקת טיימר
     setTimeout(function () {
         guess();
         document.querySelector("#chooseLevel").classList.add("work");
@@ -88,9 +81,7 @@ function hideCard() {
 
 
 }
-///פונקציית ניחושים
 function guess() {
-    // הדלקת טיימר
 
     let index = 5;
     let myTimer = setInterval(function () {
@@ -125,8 +116,6 @@ function guess() {
 
     document.querySelector("#board").innerHTML = array;
 
-    //בדיקה האם נבחרה התמונה שהוחבאה
-
     document.querySelector('#question').innerHTML = "? מי היא התמונה שהסתתרה ";
 
 
@@ -147,7 +136,6 @@ function guess() {
     document.querySelector(".gess").onclick = function () {
         alert("good");
 
-        //הכנסת נתונים חדשים
         num_points += 2;
         let str = JSON.stringify(num_points);
         localStorage.setItem(Name, num_points);
@@ -159,23 +147,12 @@ function guess() {
         document.querySelector("#num").classList.add("dontWork");
         window.document.querySelector("#num").classList.remove("work");
 
-        // let btnn = document.querySelectorAll(".im1");
-        // for (item of btnn) {
-        //     item.classList.add("dontWork");
-        // }
+    
 
     }
 
-
-
-    //     document.querySelector("#chooseLevel").classList.add("work");
-    //     document.querySelector("#chooseLevel").classList.remove("dontWork");
-    //     document.querySelector("#intro").classList.add("work");
-    //     document.querySelector("#intro").classList.remove("dontWork");
 }
 
-// // הצגת  התמונות למסך
-// document.querySelector('#question').innerHTML = "התבוננו היטב בתמונות";
 function showImg() {
     let string = ``;
     for (const item of game_cards) {
@@ -184,19 +161,14 @@ function showImg() {
     document.querySelector("#board").innerHTML = string;
 }
 
-
-///פונקציית אתחול משחק
 function init_game() {
 
     document.querySelector('#question').innerHTML = "התבוננו היטב בתמונות";
-    // ערבוב  מערך הכרטיסים
     all_cards.sort(function (a, b) { return Math.round(Math.random()) - Math.round(Math.random()) });
-    // העתקת חלק מן המערך המקורי לתוך מערך המשחק
     for (let i = 0; i < 12; i++) {
         game_cards[i] = all_cards[i];
     }
 
-    // הדלקת טיימר
     setTimeout(function () {
         hideCard();
     }, 11500/* parseInt(window.level)*/)
@@ -215,21 +187,13 @@ function init_game() {
             document.querySelector("#num").classList.remove("work");
         }
     }, 1000);
-    // הצגת  התמונות למסך
     showImg();
 
 }
-/////////////////////////////////////////////////////////////////////////////////////////////
-//התחלת המשחק ע"י זימון פונקציית אתחול משחק
+
 point();
 init_game();
 
-/*#board.guess div:nth-child(3) {
-    background-image: url(question.png);
-}
-#board.guess div:nth-child(3) img {
-    display: none;
-}*/
 
 
 
